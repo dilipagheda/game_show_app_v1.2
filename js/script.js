@@ -60,11 +60,6 @@ function checkLetter(button){
      let $value = $(value);
      if(guessedLetter === $value.text()){
        $value.addClass('show');
-       $value.css('transform','translateY(10px)');
-       $value.css('transition','transform 0.5s');
-       setTimeout(()=>{$value.css('transform','translateY(0px)');},500);
-
-
        matchedLetter = guessedLetter;
      }
   });
