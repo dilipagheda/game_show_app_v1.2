@@ -87,13 +87,13 @@ function checkWin(){
   let totalWithClassShow = $('#phrase ul li.show').length;
   if(totalWithClassLetter === totalWithClassShow){
     resetData();
-    $('#overlay').css('display','block');
+    $('#overlay').css('display','flex');
     $('#overlay').addClass('win');
     $('#overlay h2').after($('<h1>You Win!</h1>'))
   }
   if(missed >=5){
     resetData();
-    $('#overlay').css('display','block');
+    $('#overlay').css('display','flex');
     $('#overlay').addClass('lose');
     $('#overlay h2').after($('<h1>You Lose!</h1>'))
   }
