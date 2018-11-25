@@ -11,6 +11,7 @@ function resetData(){
   missed = 0;
   $('#phrase ul').empty();
   $('#qwerty .keyrow button').removeClass('chosen');
+  $('#qwerty .keyrow button').prop('disabled',false);
   $('#scoreboard ol li').css('display','');
 }
 //Get the element with the ID of qwerty and save it to a variable.
@@ -22,14 +23,14 @@ let missed = 0;
 //Create a phrases array that contains at least 5 different phrases as strings.
 const phrases = [
    'Hello World',
-   'I Love JavaScript',
    'A piece of cake',
    'smart phone',
-   'http protocol',
-   'react js',
-   'html and css',
-   'back end',
-   'too easy'
+   'too easy',
+   'elephant',
+   'home work',
+   'school',
+   'cricket',
+   'card game'
 ];
 
 function getRandomPhraseAsArray(arr){
@@ -73,6 +74,7 @@ $('#qwerty').on('click',(event)=>{
     return;
   }
   button.className = 'chosen';
+  $(button).prop('disabled',true);
   let letterFound = checkLetter(button);
   if(letterFound === null){
     missed += 1;
