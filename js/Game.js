@@ -35,8 +35,7 @@
 
      handleInteraction(buttonClicked){
         //Disable the selected letter’s onscreen keyboard button.
-        buttonClicked.className = 'chosen';
-        $(buttonClicked).addClass('animated pulse');
+        $(buttonClicked).addClass('chosen animated pulse key');
         $(buttonClicked).prop('disabled',true);
 
         let letterFound = this.activePhrase.checkLetter(buttonClicked);
@@ -97,7 +96,8 @@
      resetData(){
         this.missed = 0;
         $('#phrase ul').empty();
-        $('#qwerty .keyrow button').removeClass('chosen animated pulse');
+        $('#qwerty .keyrow button').removeClass('chosen animated pulse key');
+        $('#qwerty .keyrow button').addClass('key');
         $('#qwerty .keyrow button').prop('disabled',false);
         $('#scoreboard ol li').css('display','');
      }

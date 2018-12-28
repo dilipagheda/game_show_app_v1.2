@@ -102,6 +102,10 @@ button {
   color: transparent;
   background: var(--color-neutral-light);
   border-radius: 5px;
+
+  background: linear-gradient(160deg, #FC466B 0%, #3F5EFB 100%);
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+
 }
 
 .space {
@@ -111,8 +115,8 @@ button {
 
 
 .show {
-  color: #fff;
-  background-color: #4ac0d5;
+  color: #000;
+  /* background-color: #4ac0d5; */
   font-size: 20px;
   height: 65px;
   width: 65px;
@@ -121,10 +125,19 @@ button {
   border-radius: 5px;
   -webkit-animation-duration: .5s;
   animation-duration: .5s;
+  background: linear-gradient(160deg, #fc4a1a 0%,#f7b733 100%);
+
 }
 
 
 /* Keyboard */
+.key{
+  background: linear-gradient(160deg, #DA4453 0%, #89216B 100%);
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+  /* padding:50px; */
+  color:white;
+  border-radius:5px;
+}
 
 .keyrow {
   display: flex;
@@ -132,7 +145,7 @@ button {
 }
 
 .chosen {
-  background: #3a3f58;
+  background: grey;
   border-radius: 5px;
   font-size: var(--font-size-medium);
   color: #FFFFFF;
@@ -174,6 +187,8 @@ button {
   left: 0;
   right: 0;
   border-radius: 5px;
+  background: linear-gradient(160deg, #DA4453 0%, #89216B 100%);
+
 }
 
 .title {
@@ -204,6 +219,12 @@ button {
   color: var(--color-lose);
 }
 
+
+
+
+.header {
+  background-color: linear-gradient(160deg, #ED213A 0%, #93291E 100%);
+}
 /*
  Given the existing styles in mind, fix obvious issues for small tablet and mobile screen sizes
  and make sure that app is atleast usable.
