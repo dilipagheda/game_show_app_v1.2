@@ -1,4 +1,5 @@
 /* Main styles */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
 
 /* Variables */
 
@@ -19,9 +20,6 @@
 
 * {
   box-sizing: border-box;
-  /* font-family: 'Montserrat', sans-serif; */
-  font-family: 'Orbitron', sans-serif;
-
 }
 
 body {
@@ -39,12 +37,9 @@ li, ol, ul {
 h2 {
   margin: 0;
   text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
   font-size: var(--font-size-large);
   margin: 0;
-}
-
-h1 {
-  font-size: 30px;
 }
 
 button {
@@ -58,12 +53,6 @@ button {
   -webkit-transition: var(--transition);
   -o-transition: var(--transition);
   transition: var(--transition);
-  cursor: pointer;
-}
-
-#btn__reset {
-	width: 200px;
-	margin: 0 auto;
 }
 
 .main-container {
@@ -80,16 +69,11 @@ button {
   padding: 10px;
 }
 
-#phrase ul li{
-  margin-top: 15px;
-}
-
 /* Title */
 
 .header {
-  color: #3a3f58;
+  color: var(--color-start);
 }
-
 
 /* Phrase */
 
@@ -108,21 +92,12 @@ button {
   width: 15px;
 }
 
-
-
 .show {
-  color: #fff;
-  background-color: #4ac0d5;
-  font-size: 20px;
-  height: 65px;
-  width: 65px;
-  padding: 20px 1px 0 1px;
-  margin-right: 2px;
-  border-radius: 5px;
-  -webkit-animation-duration: .5s;
-  animation-duration: .5s;
+  color: #000;
+  background-color: #76CE82;
+  transform:rotateX(360deg);
+  transition:transform .5s ease-in-out;
 }
-
 
 /* Keyboard */
 
@@ -132,35 +107,22 @@ button {
 }
 
 .chosen {
-  background: #3a3f58;
+  background: var(--color-neutral);
   border-radius: 5px;
   font-size: var(--font-size-medium);
   color: #FFFFFF;
 }
 
-.wrong {
-  background: #f7a964;
-  color: #FFFFFF;
-}
-
 .btn__reset {
-  padding: 16px;
+  padding: 8px;
   margin: 50px auto;
-  background: #f7a964;
+  background: #FFFFFF;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: var(--font-size-medium);
+}
+.btn__reset:hover{
   cursor: pointer;
-  border-bottom: solid 4px rgba(0, 0, 0, .3);
-  border-right: solid 3px rgba(0, 0, 0, .3)
 }
-
-.btn__reset:active {
-  padding: 14px 16px 16px 14px;
-  border-bottom: solid 4px rgba(0, 0, 0, 0);
-  border-right: solid 3px rgba(0, 0, 0, 0);
-}
-
-
 /* Overlay */
 
 #overlay {
@@ -181,11 +143,11 @@ button {
 }
 
 .start {
-  background-color: #3a3f58;
+  background-color: var(--color-start);
 }
 
 .start a {
-  color: #fff;
+  color: var(--color-win);
 }
 
 .win {
@@ -197,54 +159,9 @@ button {
 }
 
 .lose {
-  background-color: #f5785f;
+  background-color: var(--color-lose);
 }
 
 .lose a {
   color: var(--color-lose);
-}
-
-/*
- Given the existing styles in mind, fix obvious issues for small tablet and mobile screen sizes
- and make sure that app is atleast usable.
- strategy: make phrase buttons bit smaller. and wrap buttons on keyboard.
-*/
-
-@media (max-width:768px){
-  .keyrow {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  /* Phrase */
-
-.letter {
-  font-size: var(--font-size-medium);
-  height: 55px;
-  width: 55px;
-  padding: 20px 1px 0 1px;
-  margin-right: 2px;
-  color: transparent;
-  background: var(--color-neutral-light);
-  border-radius: 5px;
-}
-
-.space {
-  width: 15px;
-}
-
-
-
-.show {
-  color: #fff;
-  background-color: #4ac0d5;
-  font-size: 20px;
-  height: 55px;
-  width: 55px;
-  padding: 20px 1px 0 1px;
-  margin-right: 2px;
-  border-radius: 5px;
-  -webkit-animation-duration: .5s;
-  animation-duration: .5s;
-}
 }

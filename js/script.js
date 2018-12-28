@@ -1,5 +1,5 @@
 
-$('.btn__reset').on('click',(event)=>{
+$('#btn__reset').on('click',(event)=>{
   $('#overlay h1').remove();
   $('#overlay').css('display','none');
   $('#overlay').removeClass('win lose');
