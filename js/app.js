@@ -58,6 +58,7 @@ $('#qwerty').on('click',(event)=>{
 
   });
 
+//a keypress listener to capture and respond to keypress of physical keyboard
 $('body').on('keypress',(event)=>{
     let keyCode = event.keyCode;
     console.log(String.fromCharCode(keyCode));

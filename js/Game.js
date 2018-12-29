@@ -9,6 +9,8 @@
          this.activePhrase = activePhrase;
      }
 
+     //A function to start game. it first resets data from the previous game, generates a random phrase and then
+     //prepares the game for play
      startGame(){
         //hide the start screen overlay
         $('#overlay h1').remove();
@@ -26,6 +28,7 @@
 
      }
 
+     //A function to generate and return a random phrase from the phrases array
      getRandomPhrase(){
         let arr = this.phrases; 
         let total = arr.length;
@@ -38,23 +41,29 @@
         $(buttonClicked).addClass('chosen animated pulse key');
         $(buttonClicked).prop('disabled',true);
 
+        //check if the letter on a button clicked is part of the phrase or not
         let letterFound = this.activePhrase.checkLetter(buttonClicked);
         if(letterFound === false){
+          //letter is not part of the phrase so remove life  
           this.removeLife();
         }else{
-            console.log("match found!");
+            //letter is part of the phrase so show that letter
             this.activePhrase.showMatchedLetter(buttonClicked);
         }
+        //check here if a player has won or not
         this.checkForWin();
 
      }
 
+     //A function to remove life. it hides one heart icon and reduces missed variable by 1.
      removeLife(){
         this.missed += 1;
         $(`#scoreboard ol li:nth-of-type(${this.missed})`).css('display','none');
         console.log(`missed:${this.missed}`);
      }
 
+     //A function to check if user has won or not. it checks if all letters of the phrase are shown or not.
+     //Then it checks if user has used all the remaining lives.
      checkForWin(){
         let totalWithClassLetter = $('#phrase ul li.letter').length;
         let totalWithClassShow = $('#phrase ul li.show').length;
@@ -66,6 +75,8 @@
         }
      }
 
+     //A function to declare that a game is over by either win or lose message.
+     //It brings back the overlay and resets game data.
      gameOver(win){
         this.resetData();
         if(win){
@@ -80,7 +91,7 @@
 
         /*
             Animate Start Game button after 2 seconds
-            Animate win or lose message too
+            Animate win or lose message by using rubberBand animation
         */
         setTimeout(function(){
             $('#btn__reset').removeClass('animated bounce');
@@ -93,6 +104,7 @@
         },500);
      }
 
+     //a function to reset game data.
      resetData(){
         this.missed = 0;
         $('#phrase ul').empty();

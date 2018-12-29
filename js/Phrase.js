@@ -7,6 +7,8 @@
          this.phrase = phrase.toLowerCase();
      }
 
+     //A function to convert a string phrase into an array of letters and then use that to render it on the page
+     //For each letter, it will display li element
      addPhraseToDisplay(){
         let arr = [...this.phrase];
 
@@ -23,6 +25,7 @@
         });
      }
 
+     //A function to check if letter is part of the phrase or not.
      checkLetter(letterElementSelected){
         let isMatched = false;
         let letter = letterElementSelected.textContent;
@@ -35,6 +38,8 @@
         return isMatched;
       }
 
+     //A function to show matched letter.
+     //It uses animation and styling to reveal the letter to the user.
      showMatchedLetter(matchedLetterElement){
        // $(matchedLetterElement).addClass('show');
        let letter = $(matchedLetterElement).text();
